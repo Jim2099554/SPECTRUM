@@ -1,0 +1,142 @@
+# SENTINELA - .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+venv311/
+ENV/
+env/
+.venv
+
+# PyInstaller
+*.manifest
+*.spec.bak
+build/
+dist/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node.js / React
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+frontend/dist/
+frontend/build/
+frontend/.vite/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build artifacts
+backend/client/
+*.exe
+*.app
+*.dmg
+*.pkg
+installer_output/
+release/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+backend/transcripts.db.bak
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Environment variables
+.env
+.env.production
+*.env.local
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.hypothesis/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Credentials y Secrets
+*.pem
+*.key
+*.crt
+credentials.json
+service-account.json
+google-credentials.json
+
+# Licencias de prueba (no subir licencias reales)
+test_license/
+*.lic.bak
+
+# Archivos grandes
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Audios y transcripciones (no subir datos sensibles)
+backend/audios/*.mp3
+backend/audios/*.wav
+backend/audios/*.m4a
+backend/transcripts/*.pdf
+backend/photos/*.jpg
+backend/photos/*.png
+backend/photos/*.jpeg
+
+# Mantener estructura de directorios
+!backend/audios/.gitkeep
+!backend/transcripts/.gitkeep
+!backend/photos/.gitkeep
+
+# Cache de GitHub Actions
+.github/actions-cache/

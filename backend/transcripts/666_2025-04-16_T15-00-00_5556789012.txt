@@ -1,0 +1,6 @@
+[Resumen]: Simulación de llamada oficial para fraude.
+[Delito]: robo de identidad
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Mario (5556789012)
+La llamada contiene frases asociadas a riesgo: 'robo de identidad', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:35
+Transcripción simulada de una llamada real con contenido de riesgo.

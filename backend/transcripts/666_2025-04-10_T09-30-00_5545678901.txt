@@ -1,0 +1,6 @@
+[Resumen]: Amenaza directa para obtener dinero mediante extorsión.
+[Delito]: hackeo de cuenta
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Ana López (5545678901)
+La llamada contiene frases asociadas a riesgo: 'hackeo de cuenta', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:22
+Transcripción simulada de una llamada real con contenido de riesgo.

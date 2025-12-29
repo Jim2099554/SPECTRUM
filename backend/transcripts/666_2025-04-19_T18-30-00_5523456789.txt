@@ -1,0 +1,6 @@
+[Resumen]: Simulación de llamada oficial para fraude.
+[Delito]: fraude bancario
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Juan Pérez (5523456789)
+La llamada contiene frases asociadas a riesgo: 'fraude bancario', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:53
+Transcripción simulada de una llamada real con contenido de riesgo.

@@ -1,0 +1,140 @@
+name: Build SENTINELA for Windows
+
+on:
+  push:
+    branches: [ main, master, develop ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Permite ejecutar manualmente desde GitHub
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        
+    - name: Cache Python dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~\AppData\Local\pip\Cache
+        key: ${{ runner.os }}-pip-${{ hashFiles('backend/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          
+    - name: Cache Node modules
+      uses: actions/cache@v3
+      with:
+        path: frontend/node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('frontend/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+          
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r backend/requirements.txt
+        pip install pyinstaller
+        
+    - name: Install Node dependencies
+      working-directory: ./frontend
+      run: npm ci
+      
+    - name: Build Frontend
+      working-directory: ./frontend
+      run: npm run build
+      
+    - name: Copy Frontend to Backend
+      run: |
+        if (Test-Path backend/client) { Remove-Item -Recurse -Force backend/client }
+        Copy-Item -Recurse frontend/dist backend/client
+      shell: pwsh
+      
+    - name: Create required directories
+      run: |
+        New-Item -ItemType Directory -Force -Path backend/audios
+        New-Item -ItemType Directory -Force -Path backend/photos
+        New-Item -ItemType Directory -Force -Path backend/transcripts
+      shell: pwsh
+      
+    - name: Build Backend with PyInstaller
+      run: |
+        pyinstaller sentinela.spec --clean --noconfirm
+      shell: pwsh
+      
+    - name: Verify build
+      run: |
+        if (Test-Path dist/SENTINELA_Backend/SENTINELA_Backend.exe) {
+          Write-Host "✅ Build successful!"
+          Get-ChildItem dist/SENTINELA_Backend -Recurse | Measure-Object -Property Length -Sum | Select-Object @{Name="Size(MB)";Expression={[math]::Round($_.Sum / 1MB, 2)}}
+        } else {
+          Write-Host "❌ Build failed - executable not found"
+          exit 1
+        }
+      shell: pwsh
+      
+    - name: Generate test license
+      run: |
+        python backend/scripts/generate_license.py --client "GitHub Actions Build" --institution "CI/CD" --days 30 --users 5 --output ./test_license
+      shell: pwsh
+      continue-on-error: true
+      
+    - name: Create release package
+      run: |
+        $version = if ($env:GITHUB_REF -match 'refs/tags/(.*)') { $matches[1] } else { "dev-$(Get-Date -Format 'yyyyMMdd-HHmmss')" }
+        $packageName = "SENTINELA-Windows-$version"
+        
+        New-Item -ItemType Directory -Force -Path release/$packageName
+        Copy-Item -Recurse dist/SENTINELA_Backend/* release/$packageName/
+        Copy-Item start_sentinela.bat release/$packageName/
+        Copy-Item LICENSE.txt release/$packageName/
+        Copy-Item README.md release/$packageName/
+        Copy-Item SISTEMA_LICENCIAS.md release/$packageName/
+        Copy-Item DEPLOYMENT_GUIDE.md release/$packageName/
+        
+        if (Test-Path test_license) {
+          Copy-Item -Recurse test_license release/$packageName/
+        }
+        
+        Compress-Archive -Path release/$packageName -DestinationPath "release/$packageName.zip"
+        
+        Write-Host "📦 Package created: $packageName.zip"
+      shell: pwsh
+      
+    - name: Upload Windows executable
+      uses: actions/upload-artifact@v3
+      with:
+        name: SENTINELA-Windows-Executable
+        path: dist/SENTINELA_Backend/
+        retention-days: 30
+        
+    - name: Upload release package
+      uses: actions/upload-artifact@v3
+      with:
+        name: SENTINELA-Windows-Release
+        path: release/*.zip
+        retention-days: 90
+        
+    - name: Create GitHub Release (on tag)
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: release/*.zip
+        draft: false
+        prerelease: false
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

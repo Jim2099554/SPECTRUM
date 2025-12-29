@@ -1,0 +1,6 @@
+[Resumen]: El interlocutor intentó obtener datos bancarios con engaños.
+[Delito]: phishing
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Juan Pérez (5523456789)
+La llamada contiene frases asociadas a riesgo: 'phishing', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:53
+Transcripción simulada de una llamada real con contenido de riesgo.

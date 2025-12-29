@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from '../../api/axiosInstance';
 import Label from "../form/Label";
+import LogoSpinner from "../ui/LogoSpinner";
 
 export default function OtpForm() {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
@@ -76,7 +77,6 @@ export default function OtpForm() {
   const handleSubmit = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     setLoading(true);
-    setError("");
     try {
       const code = otp.join("");
       const email = localStorage.getItem('user_email');
@@ -96,6 +96,15 @@ export default function OtpForm() {
       setLoading(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh]">
+        <LogoSpinner size={90} />
+        <p className="mt-6 text-brand-500 text-lg font-semibold">Verificando acceso...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col flex-1 w-full lg:w-1/2">
@@ -168,17 +177,20 @@ export default function OtpForm() {
                   disabled={loading}
                   className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600"
                 >
-                  {loading ? "Verificando..." : "Verificar código"}
+                  Verificar código
                 </button>
               </div>
             </div>
           </form>
+          {error && (
+            <div className="text-red-500 text-center mb-2">{error}</div>
+          )}
           <div className="mt-5">
             <p className="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start">
               Didn’t get the code?{" "}
               <Link
                 to="/"
-                className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
+                className="font-semibold text-brand-500 hover:underline"
               >
                 Resend
               </Link>

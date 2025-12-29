@@ -1,0 +1,6 @@
+[Resumen]: Simulación de llamada oficial para fraude.
+[Delito]: extorsión telefónica
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Laura (5534567890)
+La llamada contiene frases asociadas a riesgo: 'extorsión telefónica', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:29
+Transcripción simulada de una llamada real con contenido de riesgo.

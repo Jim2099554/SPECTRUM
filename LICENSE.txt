@@ -1,0 +1,62 @@
+SENTINELA - Sistema de Inteligencia Penitenciaria
+Acuerdo de Licencia de Usuario Final (EULA)
+
+Copyright © 2025 - Todos los derechos reservados
+
+IMPORTANTE: LEA CUIDADOSAMENTE ESTE ACUERDO ANTES DE INSTALAR O USAR ESTE SOFTWARE.
+
+1. CONCESIÓN DE LICENCIA
+Este software se proporciona bajo licencia, no se vende. Este acuerdo le otorga 
+los siguientes derechos:
+
+a) Instalación y Uso: Puede instalar y usar una copia del software en un solo 
+   equipo por cada licencia USB adquirida.
+
+b) Licencia USB: El uso del software requiere una licencia USB válida y activa. 
+   El USB debe permanecer conectado durante el uso del sistema.
+
+2. RESTRICCIONES
+No puede:
+a) Copiar, modificar o distribuir el software sin autorización
+b) Realizar ingeniería inversa, descompilar o desensamblar el software
+c) Compartir la licencia USB con otros equipos o usuarios
+d) Remover o modificar avisos de derechos de autor
+e) Usar el software para fines ilegales
+
+3. PROPIEDAD INTELECTUAL
+El software y todos los derechos, incluyendo pero no limitado a derechos de 
+autor, patentes, marcas comerciales y secretos comerciales, son propiedad 
+exclusiva del licenciante.
+
+4. TÉRMINO Y TERMINACIÓN
+Esta licencia es efectiva hasta que sea terminada. Sus derechos bajo esta 
+licencia terminarán automáticamente sin aviso si no cumple con cualquiera de 
+sus términos.
+
+5. GARANTÍA LIMITADA
+El software se proporciona "TAL CUAL" sin garantías de ningún tipo, ya sean 
+expresas o implícitas.
+
+6. LIMITACIÓN DE RESPONSABILIDAD
+En ningún caso el licenciante será responsable por daños especiales, 
+incidentales, indirectos o consecuentes.
+
+7. SOPORTE TÉCNICO
+El soporte técnico está disponible según los términos del acuerdo de servicio 
+adquirido.
+
+8. ACTUALIZACIONES
+Las actualizaciones del software pueden requerir una licencia válida y activa.
+
+9. LEY APLICABLE
+Este acuerdo se regirá por las leyes de México.
+
+10. ACUERDO COMPLETO
+Este acuerdo constituye el acuerdo completo entre usted y el licenciante.
+
+Al instalar o usar este software, usted acepta estar sujeto a los términos 
+de este acuerdo.
+
+Para preguntas sobre este acuerdo, contacte:
+Email: soporte@sentinela.com
+Teléfono: +52 (XXX) XXX-XXXX

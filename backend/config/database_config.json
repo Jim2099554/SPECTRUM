@@ -1,0 +1,17 @@
+{
+  "databases": {
+    "ppl": {
+      "required": true,
+      "type": "sqlite",
+      "database": "backend/transcripts.db",
+      "tables": {
+        "inmates": "calls"
+      },
+      "fields_mapping": {
+        "pin": "pin_emitter",
+        "nombre": "pin_emitter",
+        "phone": "phone_number"
+      }
+    }
+  }
+}

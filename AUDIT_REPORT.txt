@@ -1,0 +1,245 @@
+================================================================================
+SENTINELA - REPORTE DE AUDITORÍA DE CÓDIGO
+================================================================================
+
+
+🔍 STATEMENTS DE DEBUG ENCONTRADOS: 264
+--------------------------------------------------------------------------------
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/db.py
+     Línea 6: print(f"[DEBUG] Usando base de datos: {DATABASE_URL}")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/generate_fake_calls.py
+     Línea 40: print(f"Generados 20 archivos de llamadas ficticias en {TRANSCRIPTS_DIR}")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/generate_alerts_from_transcripts.py
+     Línea 61: print(f"Listo. Se generaron {alert_count} eventos de alerta desde transcripcione
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/reporte_vinculos_excel.py
+     Línea 60: print(f"Reporte de vínculos exportado a {EXCEL_PATH}")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/reporte_vinculos_excel.py
+     Línea 70: print(f"Gráfico de red guardado en {GRAFICO_PATH}")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/insert_test_alert.py
+     Línea 41: print(f"Registro de prueba insertado: call_id={call.id}, alert_event_id={alert_e
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/init_call_details_table.py
+     Línea 10: print("Tabla call_details creada o ya existente.")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/sync_transcripts_to_calls.py
+     Línea 72: print(f"[WARN] No se pudo notificar al WebSocket: {e}")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/sync_transcripts_to_calls.py
+     Línea 127: print(f"[INFO] Insertado detalle para call_id={call_id}")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/sync_transcripts_to_calls.py
+     Línea 131: print(f"[WARN] DB locked, reintentando ({intento+1}/5)...")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/sync_transcripts_to_calls.py
+     Línea 139: print(f"[ERROR] Falló la inserción de detalles para call_id={call_id}: {e}")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/sync_transcripts_to_calls.py
+     Línea 143: print(f"Sincronizados {len(llamadas_unicas)} llamadas únicas desde archivos de /
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/create_alert_tables.py
+     Línea 9: print("Creando tablas de alertas si no existen...")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/create_alert_tables.py
+     Línea 11: print("Listo. Tablas de alertas creadas o ya existentes.")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/create_tables.py
+     Línea 5: print("Creando tablas en la base de datos...")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/create_tables.py
+     Línea 7: print("¡Listo! Tablas creadas si no existían.")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/pbx_connector.py
+     Línea 23: print("✅ Conectado a Asterisk AMI")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/pbx_connector.py
+     Línea 26: print(f"❌ Error al conectar con Asterisk: {e}")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/pbx_connector.py
+     Línea 34: print("🔌 Desconectado de Asterisk")
+     Tipo: print
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/pbx_connector.py
+     Línea 45: print(f"📞 Llamada entrante: {caller_id} -> {destination}")
+     Tipo: print
+
+  ... y 244 más
+
+📝 TODOs/FIXMEs ENCONTRADOS: 13
+--------------------------------------------------------------------------------
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/core/switchboard.py
+     Línea 40: # TODO: Integrate with your telephony API/hardware here
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/microservicio_fastapi.py
+     Línea 59: # TODO: ELIMINAR ENDPOINTS DEMO EN PRODUCCIÓN
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/microservicio_fastapi.py
+     Línea 67: # TODO: Eliminar este endpoint en producción
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/microservicio_fastapi.py
+     Línea 77: # TODO: Eliminar este endpoint en producción
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 9: - TODOs y FIXMEs
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 48: # Buscar TODOs y FIXMEs
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 50: if 'TODO' in line or 'FIXME' in line or 'XXX' in line:
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 103: # Buscar TODOs
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 105: if 'TODO' in line or 'FIXME' in line:
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 161: # TODOs
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 163: report.append(f"\n📝 TODOs/FIXMEs ENCONTRADOS: {len(self.issues['todos'])}")
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 172: report.append("\n✅ No se encontraron TODOs pendientes")
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/scripts/audit_code.py
+     Línea 212: report.append(f"  - TODOs/FIXMEs: {len(self.issues['todos'])}")
+
+
+💬 BLOQUES DE CÓDIGO COMENTADO: 27
+--------------------------------------------------------------------------------
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/core/auth/verification.py
+     Línea 9: 6 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/core/auth/verification.py
+     Línea 10: 7 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/core/auth/verification.py
+     Línea 11: 8 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/core/auth/verification.py
+     Línea 12: 9 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/core/auth/verification.py
+     Línea 13: 10 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 306: 6 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 307: 7 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 308: 8 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 309: 9 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 310: 10 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 311: 11 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 312: 12 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 313: 13 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 314: 14 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 315: 15 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 316: 16 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 317: 17 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 318: 18 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 319: 19 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 320: 20 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 321: 21 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 322: 22 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 323: 23 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 324: 24 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 325: 25 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 326: 26 líneas comentadas consecutivas
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/server/report_router.py
+     Línea 327: 27 líneas comentadas consecutivas
+
+
+📏 ARCHIVOS GRANDES: 5
+--------------------------------------------------------------------------------
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/frontend/src/components/ui/spinner/SpinnerTwo.tsx
+     931 líneas - Considerar dividir en componentes más pequeños
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/frontend/src/components/ui/spinner/SpinnerThree.tsx
+     791 líneas - Considerar dividir en componentes más pequeños
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/frontend/src/components/tables/DataTables/TableThree/DataTableThree.tsx
+     576 líneas - Considerar dividir en componentes más pequeños
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/backend/core/database/database_manager.py
+     515 líneas - Considerar refactorizar
+
+  📄 /Users/jorgeivancantumartinez/CascadeProjects/spectrum/frontend/src/components/task/TaskHeader.tsx
+     433 líneas - Considerar dividir en componentes más pequeños
+
+
+================================================================================
+RESUMEN
+================================================================================
+
+Total de issues encontrados: 309
+  - Debug statements: 264
+  - TODOs/FIXMEs: 13
+  - Código comentado: 27
+  - Archivos grandes: 5
+  - Advertencias: 0
+
+⚠️  Se recomienda limpieza de código antes de producción.

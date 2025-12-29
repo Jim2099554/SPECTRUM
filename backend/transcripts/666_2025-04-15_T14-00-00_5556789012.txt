@@ -1,0 +1,6 @@
+[Resumen]: Intento de obtener contraseñas mediante manipulación.
+[Delito]: transferencia ilícita
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Mario (5556789012)
+La llamada contiene frases asociadas a riesgo: 'transferencia ilícita', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:38
+Transcripción simulada de una llamada real con contenido de riesgo.

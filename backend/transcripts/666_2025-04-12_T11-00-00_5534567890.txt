@@ -1,0 +1,6 @@
+[Resumen]: El interlocutor intentó obtener datos bancarios con engaños.
+[Delito]: fraude bancario
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Laura (5534567890)
+La llamada contiene frases asociadas a riesgo: 'fraude bancario', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:12
+Transcripción simulada de una llamada real con contenido de riesgo.

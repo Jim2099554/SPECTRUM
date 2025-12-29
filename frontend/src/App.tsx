@@ -6,7 +6,6 @@ import Crm from "./pages/Dashboard/Crm";
 import Marketing from "./pages/Dashboard/Marketing";
 import Analytics from "./pages/Dashboard/Analytics";
 import SignIn from "./pages/AuthPages/SignIn";
-import SignUp from "./pages/AuthPages/SignUp";
 import NotFound from "./pages/OtherPage/NotFound";
 import UserProfiles from "./pages/UserProfiles";
 import Carousel from "./pages/UiElements/Carousel";
@@ -60,22 +59,32 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import TaskList from "./pages/Task/TaskList";
 import Saas from "./pages/Dashboard/Saas";
+import Usuarios from "./pages/Dashboard/Usuarios";
+
+import SessionTimeoutHandler from "./components/auth/SessionTimeoutHandler";
+import StatisticsNetwork from "./pages/StatisticsNetwork";
 
 export default function App() {
   return (
     <>
       <Router>
+        <SessionTimeoutHandler />
         <ScrollToTop />
         <Routes>
           {/* Rutas protegidas (dashboard y páginas principales) */}
           <Route element={<PrivateRoute />}>
             <Route element={<AppLayout />}>
               <Route index path="/" element={<DashboardPrincipal />} />
+<Route path="/dashboard" element={<DashboardPrincipal />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/marketing" element={<Marketing />} />
               <Route path="/crm" element={<Crm />} />
               <Route path="/stocks" element={<Stocks />} />
               <Route path="/saas" element={<Saas />} />
+              <Route path="/dashboard/usuarios" element={<Usuarios />} />
+
+              {/* Red de vínculos */}
+              <Route path="/statistics" element={<StatisticsNetwork />} />
 
               {/* Others Page */}
               <Route path="/profile" element={<UserProfiles />} />

@@ -1,0 +1,6 @@
+[Resumen]: Intento de obtener contraseñas mediante manipulación.
+[Delito]: estafa piramidal
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Laura (5534567890)
+La llamada contiene frases asociadas a riesgo: 'estafa piramidal', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:37
+Transcripción simulada de una llamada real con contenido de riesgo.

@@ -1,0 +1,87 @@
+{
+  "flat": [
+    "droga",
+    "entrega",
+    "revisión",
+    "peligro",
+    "mañana",
+    "contrabando",
+    "escape",
+    "arma",
+    "corrupción",
+    "soborno",
+    "fuga",
+    "amenaza",
+    "prohibido",
+    "guardia",
+    "visita",
+    "transferencia",
+    "celda",
+    "llamada",
+    "paquete",
+    "dinero",
+    "ya conseguí la papa",
+    "dale pa' abajo",
+    "da el golpe",
+    "va a caer",
+    "ya está armado",
+    "tenemos luz verde",
+    "el paquete está listo",
+    "el jefe dio la orden",
+    "está adentro",
+    "se va a hacer",
+    "el patrón dijo que sí",
+    "cargamento",
+    "entrega nocturna",
+    "revisión falsa",
+    "pagaron la plaza",
+    "puso dedo",
+    "lo van a levantar",
+    "ya se armó",
+    "se cayó el cantón",
+    "el fierro está listo",
+    "volaron a uno",
+    "la mercancía está lista",
+    "ya cayó la carga",
+    "la papa está en camino",
+    "levántalo",
+    "le van a dar piso",
+    "va a pagar la plaza",
+    "si no coopera, ya sabe",
+    "ya arreglamos con el jefe",
+    "el guardia ya está",
+    "todo pasa sin revisión"
+  ],
+  "categories": {
+    "narcotráfico": [
+      "la mercancía está lista", "ya cayó la carga", "la papa está en camino", "el envío va en camino", "tenemos luz verde", "ya está armado", "ya conseguimos la papa", "el paquete va por tierra", "la cocina está trabajando", "vamos a cocinar"
+    ],
+    "drogas": [
+      "ya tenemos la mota", "tráete el cristal", "pásame las pastillas", "hay polvo nuevo", "vamos a mover mercancía", "cargamento de piedra", "el perico ya llegó", "la bolsa está llena", "vamos a repartir"
+    ],
+    "violencia": [
+      "dale pa' abajo", "le van a dar piso", "ya se armó", "va a caer uno", "lo van a levantar", "ya cayó el cantón", "volaron a uno", "va a correr sangre", "tengo el fierro listo"
+    ],
+    "robo": [
+      "da el golpe", "vamos a dar el bajón", "entra por la ventana", "rompe la chapa", "te llevas todo", "es fácil de abrir", "entra cuando se vayan", "ya no hay cámaras", "sólo hay un guardia"
+    ],
+    "extorsión": [
+      "va a pagar la plaza", "ya cooperó", "si no paga, ya sabe", "dile que es por protección", "pide el número de cuenta", "ya le mandamos el mensaje", "que pague por la seguridad"
+    ],
+    "secuestro": [
+      "ya está en el punto", "lo tenemos amarrado", "pide el rescate", "no le den comida", "graba el mensaje", "muéstrale la foto", "trasládalo en la noche", "cámbialo de casa", "que no hable"
+    ],
+    "fraude": [
+      "hazle la transferencia", "usa el otro RFC", "cambia el número de cuenta", "factura falsa", "ya cayó el depósito", "usa el nombre de tu primo", "te van a depositar y tú me das", "hazle como si fuera oficial"
+    ],
+    "violación": [
+      "la llevamos sola", "nadie la va a ayudar", "es una niña", "no va a decir nada", "ya está dormida", "no se va a acordar", "tiene miedo", "ya no gritó", "es menor"
+    ],
+    "intrusión": [
+      "rompe el candado", "salta la barda", "escalamos el muro", "forza la cerradura", "entramos por la cocina", "la puerta trasera está abierta"
+    ],
+    "filtración": [
+      "manda la info", "pasó el expediente", "me enseñó los papeles", "trae el archivo", "copió los datos", "lo filtramos al medio", "ya se fue al otro lado", "los policías ya saben"
+    ]
+  }
+}

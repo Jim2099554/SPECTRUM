@@ -1,0 +1,62 @@
+{
+  "databases": {
+    "ppl": {
+      "required": true,
+      "type": "mysql",
+      "host": "localhost",
+      "port": 3306,
+      "database": "ppl_database",
+      "username": "sentinela_user",
+      "password": "your_password_here",
+      "tables": {
+        "inmates": "ppl_table"
+      },
+      "fields_mapping": {
+        "pin": "numero_ppl",
+        "nombre": "nombre_completo",
+        "foto": "ruta_foto",
+        "ingreso": "fecha_ingreso",
+        "delito": "delito_principal"
+      }
+    },
+    "pbx": {
+      "required": false,
+      "type": "postgresql",
+      "host": "localhost",
+      "port": 5432,
+      "database": "pbx_calls",
+      "username": "pbx_user",
+      "password": "your_password_here",
+      "tables": {
+        "calls": "call_records"
+      },
+      "search_fields": ["caller_id", "extension", "pin_number"]
+    },
+    "carpetas": {
+      "required": false,
+      "type": "mssql",
+      "host": "localhost",
+      "port": 1433,
+      "database": "investigaciones",
+      "username": "inv_user",
+      "password": "your_password_here",
+      "tables": {
+        "cases": "carpetas_investigacion"
+      },
+      "search_fields": ["numero_expediente", "nombre_investigado", "pin"]
+    },
+    "visitas": {
+      "required": false,
+      "type": "mysql",
+      "host": "localhost",
+      "port": 3306,
+      "database": "visitas_db",
+      "username": "visitas_user",
+      "password": "your_password_here",
+      "tables": {
+        "visits": "registro_visitas"
+      },
+      "search_fields": ["pin_visitado", "nombre_visitado"]
+    }
+  }
+}

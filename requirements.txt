@@ -1,13 +1,46 @@
-# Core dependencies
-fastapi>=0.104.0
-uvicorn>=0.24.0
-pydantic>=2.4.2
+# Requiere Python >=3.9 (recomendado 3.10+)
+langdetect
+fastapi
+uvicorn
+python-dotenv
+sqlalchemy
+pydantic
+sqlite3
+passlib[bcrypt]
+python-multipart
+email-validator
+python-jose[cryptography]
+fastapi-mail
+aiofiles
+requests
+httpx
+pytest
+pytest-cov
+coverage
+pillow
+starlette
 
-# Visualization
-networkx>=3.2.1
-plotly>=5.18.0
-numpy>=1.26.0
+# =====================
+# INSTALADOR SENTINELA
+# =====================
 
-# Text Analysis
-transformers>=4.35.0
-torch>=2.0.0
+# 1. DEPENDENCIAS DEL BACKEND (PYTHON)
+# -------------------------------------
+# Ejecuta este comando en la raíz del proyecto para instalar todo lo necesario para FastAPI y el backend:
+#
+#    pip install -r requirements.txt
+#
+# O bien, instala manualmente:
+#
+#    pip install fastapi uvicorn python-dotenv sqlalchemy pydantic sqlite3 passlib[bcrypt] python-multipart email-validator python-jose[cryptography] fastapi-mail aiofiles requests httpx pytest pytest-cov coverage pillow starlette # Requiere Python >=3.9 (recomendado 3.10+)
+langdetect
+
+# 2. DEPENDENCIAS DEL FRONTEND (NODE.JS)
+# --------------------------------------
+# Ve a la carpeta frontend/ y ejecuta:
+#
+#    npm install
+#
+# Esto instalará todas las dependencias listadas en package.json, incluyendo:
+#    @fullcalendar/core, @fullcalendar/daygrid, @fullcalendar/interaction, @fullcalendar/list, @fullcalendar/react, @fullcalendar/timegrid, @react-jvectormap/core, @react-jvectormap/world, @tailwindcss/forms, @types/react-router-dom, apexcharts, axios, flatpickr, js-sha512, react, react-apexcharts, react-dnd, react-dnd-html5-backend, react-dom, react-dropzone, react-force-graph, react-force-graph-2d, react-force-graph-3d, react-helmet-async, react-router, react-router-dom, simplebar-react, swiper, tailwind-merge, three, y todas las devDependencies necesarias para desarrollo y build.
+

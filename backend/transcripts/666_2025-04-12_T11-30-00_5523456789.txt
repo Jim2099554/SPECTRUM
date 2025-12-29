@@ -1,0 +1,6 @@
+[Resumen]: Se solicitó una transferencia urgente a una cuenta desconocida.
+[Delito]: fraude bancario
+Participantes: Emisor: Pedro Hernández (5512345678), Receptor: Juan Pérez (5523456789)
+La llamada contiene frases asociadas a riesgo: 'fraude bancario', 'transferencia', 'cuenta', 'dinero'.
+Duración: 00:02:57
+Transcripción simulada de una llamada real con contenido de riesgo.
