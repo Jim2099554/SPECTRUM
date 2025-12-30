@@ -71,7 +71,7 @@ jobs:
       
     - name: Upload artifact
       if: success()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: SENTINELA-Windows-Simple
         path: dist/SENTINELA_Backend/
