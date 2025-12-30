@@ -46,7 +46,8 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r backend/requirements.txt
+        pip install wheel setuptools
+        pip install -r backend/requirements.txt --no-cache-dir || pip install -r backend/requirements-windows.txt --no-cache-dir
         pip install pyinstaller
         
     - name: Install Node dependencies
@@ -55,7 +56,13 @@ jobs:
       
     - name: Build Frontend
       working-directory: ./frontend
-      run: npm run build
+      run: |
+        npm run build
+        if (-not (Test-Path dist)) {
+          Write-Error "Frontend build failed - dist folder not created"
+          exit 1
+        }
+      shell: pwsh
       
     - name: Copy Frontend to Backend
       run: |
