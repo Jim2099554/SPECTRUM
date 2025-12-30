@@ -88,7 +88,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='assets/sentinela_icon.ico' if sys.platform == 'win32' else None,
+    icon=None,
 )
 
 # Colección de archivos
