@@ -37,6 +37,12 @@ jobs:
         rm -rf backend/client
         cp -r frontend/dist backend/client
 
+    - name: Create required directories
+      run: |
+        mkdir -p backend/audios
+        mkdir -p backend/photos
+        mkdir -p backend/transcripts
+
     - name: Build Executable
       run: python -m PyInstaller sentinela_centro.spec --clean --noconfirm
 

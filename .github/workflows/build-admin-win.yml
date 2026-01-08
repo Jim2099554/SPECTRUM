@@ -38,6 +38,13 @@ jobs:
         Copy-Item -Recurse frontend/dist backend/client
       shell: pwsh
 
+    - name: Create required directories
+      run: |
+        New-Item -ItemType Directory -Force backend/audios
+        New-Item -ItemType Directory -Force backend/photos
+        New-Item -ItemType Directory -Force backend/transcripts
+      shell: pwsh
+
     - name: Build Executable
       run: python -m PyInstaller sentinela_admin.spec --clean --noconfirm
       shell: pwsh
