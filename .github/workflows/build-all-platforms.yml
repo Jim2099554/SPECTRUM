@@ -65,7 +65,7 @@ jobs:
         else
           SPEC_FILE="sentinela_admin.spec"
         fi
-        pyinstaller $SPEC_FILE --clean --noconfirm
+        python -m PyInstaller $SPEC_FILE --clean --noconfirm
 
     - name: Create Release Package
       shell: bash
