@@ -24,8 +24,8 @@ jobs:
     - name: Install Deps
       run: |
         python -m pip install --upgrade pip
-        pip install wheel setuptools pyinstaller
-        pip install -r ./requirements.txt
+        python -m pip install wheel setuptools pyinstaller
+        python -m pip install -r ./requirements.txt
         python -m spacy download es_core_news_sm
 
     - name: Build Frontend
