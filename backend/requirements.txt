@@ -25,7 +25,7 @@ openai-whisper==20231117
 spacy==3.7.2
 transformers==4.35.2
 langdetect==1.0.9
-pysentimiento>=0.7.0
+pysentimiento
 google-cloud-speech==2.23.0
 google-cloud-storage==2.13.0
 torch>=2.0.0
