@@ -7,6 +7,9 @@ import sys
 import os
 from PyInstaller.utils.hooks import collect_data_files, collect_submodules
 
+# Increase recursion limit for large projects with many dependencies
+sys.setrecursionlimit(sys.getrecursionlimit() * 5)
+
 block_cipher = None
 
 # Datos adicionales a incluir
