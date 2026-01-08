@@ -10,6 +10,7 @@ RECOMMENDED_PYTHON = (3, 10)
 
 FRONTEND_DIR = os.path.join(os.path.dirname(__file__), 'frontend')
 REQUIREMENTS_FILE = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+REQUIREMENTS_WINDOWS = os.path.join(os.path.dirname(__file__), 'backend', 'requirements-windows.txt')
 
 
 def check_python_version():
@@ -38,6 +39,19 @@ def check_node_version():
             print("  ✔ Versión de Node.js adecuada.")
     except Exception:
         print("[ERROR] Node.js no está instalado o no está en el PATH. Instálalo antes de continuar.")
+        sys.exit(1)
+
+def check_ffmpeg():
+    print(f"\n[2.bis] Verificando FFmpeg (necesario para audio/Whisper)...")
+    try:
+        subprocess.check_output(['ffmpeg', '-version'], stderr=subprocess.STDOUT)
+        print("  ✔ FFmpeg detectado.")
+    except Exception:
+        print("[ERROR] FFmpeg no detectado.")
+        if platform.system() == 'Windows':
+            print("  Por favor, descarga FFmpeg de https://ffmpeg.org/ e incorpóralo al PATH.")
+        else:
+            print("  Puedes instalarlo con: brew install ffmpeg (en Mac)")
         sys.exit(1)
 
 def ask_external_db():
@@ -101,7 +115,14 @@ def install_python_deps():
     if not pip:
         print("[ERROR] pip no encontrado. Instálalo antes de continuar.")
         sys.exit(1)
-    subprocess.check_call([pip, 'install', '-r', REQUIREMENTS_FILE])
+    
+    req_file = REQUIREMENTS_WINDOWS if platform.system() == 'Windows' else REQUIREMENTS_FILE
+    print(f"  Instalando dependencias desde {req_file}...")
+    subprocess.check_call([pip, 'install', '-r', req_file])
+    
+    print("  Instalando modelo de spaCy (es_core_news_sm)...")
+    subprocess.check_call([sys.executable if use_venv == 'n' else pip.replace('pip', 'python'), '-m', 'spacy', 'download', 'es_core_news_sm'])
+    
     print("  ✔ Dependencias de Python instaladas.")
 
 def install_node_deps():
@@ -126,6 +147,7 @@ def main():
     print("==============================\n")
     check_python_version()
     check_node_version()
+    check_ffmpeg()
     ask_external_db()
     install_python_deps()
     install_node_deps()

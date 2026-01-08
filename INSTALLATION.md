@@ -7,7 +7,8 @@
 - **Python 3.11+** (recomendado instalar con [pyenv](https://github.com/pyenv/pyenv) o gestor similar)
 - **Node.js 18+** y **npm** o **yarn**
 - **Git**
-- **(Opcional, recomendado en Mac)**: [Homebrew](https://brew.sh/) para instalar MailHog
+- **FFmpeg** (Requisito crítico para procesamiento de audio y transcripción con Whisper)
+- **(Opcional, recomendado en Mac)**: [Homebrew](https://brew.sh/) para instalar MailHog y ffmpeg
 - **(Opcional)**: [DB Browser for SQLite](https://sqlitebrowser.org/) para inspeccionar la base de datos visualmente
 
 ---
@@ -29,9 +30,26 @@ source venv311/bin/activate
 ```
 
 ### b) Instala dependencias
+
+#### Windows:
+```bash
+pip install -r backend/requirements-windows.txt
+```
+
+#### Mac / Linux:
 ```bash
 pip install -r requirements.txt
 ```
+
+#### Instala modelos de spaCy necesarios:
+```bash
+python -m spacy download es_core_news_sm
+```
+
+> [!IMPORTANT]
+> **Instalación de FFmpeg:**
+> - **Mac**: `brew install ffmpeg`
+> - **Windows**: Descargar de [ffmpeg.org](https://ffmpeg.org/download.html), extraer y añadir el binario al PATH del sistema.
 
 ### c) Configura variables de entorno
 ```bash

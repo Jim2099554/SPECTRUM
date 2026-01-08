@@ -29,7 +29,7 @@ jobs:
 
       - name: Install frontend dependencies
         run: |
-          cd frontend/tailadmin-react
+          cd frontend
           npm install
 
       - name: Install backend dependencies
@@ -42,7 +42,7 @@ jobs:
 
       - name: Ejecutar pruebas frontend
         run: |
-          cd frontend/tailadmin-react
+          cd frontend
           npm run test --if-present
 
       - name: Ejecutar pruebas backend
