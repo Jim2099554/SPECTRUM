@@ -1,0 +1,55 @@
+name: Build Centro - macOS
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with: { python-version: '3.11' }
+    - uses: actions/setup-node@v3
+      with: { node-version: '20' }
+    
+    - name: Cache
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-centro-${{ hashFiles('**/requirements.txt') }}
+    
+    - name: Install Deps
+      run: |
+        python -m pip install --upgrade pip
+        pip install wheel setuptools pyinstaller
+        pip install -r ./requirements.txt
+        python -m spacy download es_core_news_sm
+
+    - name: Build Frontend
+      run: |
+        cd frontend
+        npm install
+        npm run build
+        cd ..
+        rm -rf backend/client
+        cp -r frontend/dist backend/client
+
+    - name: Build Executable
+      run: python -m PyInstaller sentinela_centro.spec --clean --noconfirm
+
+    - name: Package
+      run: |
+        PKG="SENTINELA-Centro-macOS-v1.0"
+        mkdir -p "release/$PKG"
+        cp -r dist/SENTINELA_Centro/* "release/$PKG/"
+        cd release
+        zip -r "$PKG.zip" "$PKG"
+
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: SENTINELA-Centro-macOS
+        path: release/*.zip
