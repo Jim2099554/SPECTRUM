@@ -20,6 +20,7 @@ datas = [
     ('backend/transcripts', 'backend/transcripts'),
     ('backend/audios', 'backend/audios'),
     ('backend/client', 'backend/client'),
+    ('backend/scripts', 'backend/scripts'),  # Incluir wizards de configuración
 ]
 
 # Incluir modelos de spaCy
@@ -50,6 +51,20 @@ hiddenimports = [
     'backend.server.license_router',
     'google.cloud.speech',
     'google.cloud.storage',
+    # Módulos PBX
+    'backend.core.pbx',
+    'backend.core.pbx.base_adapter',
+    'backend.core.pbx.asterisk_adapter',
+    'backend.core.pbx.grandstream_adapter',
+    'backend.core.pbx.null_adapter',
+    'backend.core.pbx.pbx_factory',
+    'asterisk',
+    'asterisk.manager',
+    'asterisk.ami',
+    # Wizards de configuración
+    'backend.scripts.pbx_setup_wizard',
+    'backend.scripts.database_setup_wizard',
+    'backend.scripts.initial_setup_wizard',
 ]
 
 a = Analysis(

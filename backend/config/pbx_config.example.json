@@ -1,0 +1,18 @@
+{
+    "pbx_type": "asterisk",
+    "protocol": "ami",
+    "enabled": true,
+    "connection": {
+        "host": "192.168.1.100",
+        "port": 5038,
+        "username": "sentinela",
+        "password": "your_ami_password_here"
+    },
+    "recording": {
+        "enabled": true,
+        "format": "wav",
+        "command": "MixMonitor",
+        "path": "/var/spool/asterisk/monitor/"
+    },
+    "notes": "Configuración de ejemplo para Asterisk PBX"
+}
